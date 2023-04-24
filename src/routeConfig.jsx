@@ -1,7 +1,7 @@
 import { createHashRouter } from 'react-router-dom'
 import Root from './routes/Root.jsx'
 import Start from './routes/Start.jsx'
-import Products from './routes/Products.jsx'
+import Products, { loader as productsLoader } from './routes/Products.jsx'
 import About from './routes/About.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
 
@@ -21,7 +21,8 @@ const router = createHashRouter([
 			},
 			{
 				path: 'products',
-				element: <Products />
+				element: <Products />,
+				loader: productsLoader
 			},
 			{
 				path: 'about',
