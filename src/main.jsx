@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Root from './routes/Root.jsx'
+import Start from './routes/Start.jsx'
+import Products from './routes/Products.jsx'
 import './index.css'
 
 // Skapa en router med konfiguration, som beskriver alla routes som ska finnas i appen
@@ -11,7 +13,18 @@ const router = createHashRouter([
 		path: '/',
 
 		// ...så visa denna komponent
-		element: <Root />
+		element: <Root />,
+
+		children: [
+			{
+				path: '',
+				element: <Start />
+			},
+			{
+				path: 'products',
+				element: <Products />
+			}
+		]
 	}
 ])
 
