@@ -4,10 +4,10 @@ const Root = () => (
 	<div>
 		<header>
 			<nav>
-				<NavLink activeClassName="selected" to="/"> Start </NavLink>
-				<NavLink activeClassName="selected" to="/products"> Products </NavLink>
-				<NavLink activeClassName="selected" to="/about"> About </NavLink>
-				<NavLink activeClassName="selected" to="/error"> This does not exist </NavLink>
+				<NavLink to="/"> Start </NavLink>
+				<NavLink to="/products"> Products </NavLink>
+				<NavLink to="/about"> About </NavLink>
+				<NavLink to="/error"> This does not exist </NavLink>
 			</nav>
 		</header>
 		<main>
