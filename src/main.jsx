@@ -1,41 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
-import Root from './routes/Root.jsx'
-import Start from './routes/Start.jsx'
-import Products from './routes/Products.jsx'
-import About from './routes/About.jsx'
-import ErrorPage from './routes/ErrorPage.jsx'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routeConfig.jsx'
 import './index.css'
 
-// Skapa en router med konfiguration, som beskriver alla routes som ska finnas i appen
-const router = createHashRouter([
-	{
-		// Om URL börjar med "/"...
-		path: '/',
 
-		// ...så visa denna komponent
-		element: <Root />,
-
-		children: [
-			{
-				path: '',
-				element: <Start />
-			},
-			{
-				path: 'products',
-				element: <Products />
-			},
-			{
-				path: 'about',
-				element: <About />
-			}
-		],
-
-		// Används om URL inte matchar någon tidigare
-		errorElement: <ErrorPage />
-	}
-])
 
 // Rendera appen
 ReactDOM.createRoot(document.getElementById('root')).render(
