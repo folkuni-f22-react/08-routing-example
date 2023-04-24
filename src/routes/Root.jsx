@@ -1,12 +1,14 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, NavLink } from 'react-router-dom'
 
 const Root = () => (
 	<div>
 		<header>
-			<Link to="/"> Start </Link>
-			<Link to="/products"> Products </Link>
-			<Link to="/about"> About </Link>
-			<Link to="/error"> This does not exist </Link>
+			<nav>
+				<NavLink activeClassName="selected" to="/"> Start </NavLink>
+				<NavLink activeClassName="selected" to="/products"> Products </NavLink>
+				<NavLink activeClassName="selected" to="/about"> About </NavLink>
+				<NavLink activeClassName="selected" to="/error"> This does not exist </NavLink>
+			</nav>
 		</header>
 		<main>
 			<Outlet />
