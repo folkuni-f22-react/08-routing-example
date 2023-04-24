@@ -4,6 +4,8 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Root from './routes/Root.jsx'
 import Start from './routes/Start.jsx'
 import Products from './routes/Products.jsx'
+import About from './routes/About.jsx'
+import ErrorPage from './routes/ErrorPage.jsx'
 import './index.css'
 
 // Skapa en router med konfiguration, som beskriver alla routes som ska finnas i appen
@@ -23,8 +25,15 @@ const router = createHashRouter([
 			{
 				path: 'products',
 				element: <Products />
+			},
+			{
+				path: 'about',
+				element: <About />
 			}
-		]
+		],
+
+		// Används om URL inte matchar någon tidigare
+		errorElement: <ErrorPage />
 	}
 ])
 
