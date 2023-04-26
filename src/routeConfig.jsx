@@ -3,6 +3,7 @@ import Root from './routes/Root.jsx'
 import Start from './routes/Start.jsx'
 import Products, { loader as productsLoader } from './routes/Products.jsx'
 import About from './routes/About.jsx'
+import AboutUs from './routes/AboutUs.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
 import ProductDetails from './routes/ProductDetails.jsx'
 
@@ -27,7 +28,13 @@ const router = createHashRouter([
 			},
 			{
 				path: 'about',
-				element: <About />
+				element: <About />,
+				children: [
+					{
+						path: 'about-us',
+						element: <AboutUs />
+					}
+				]
 			},
 			{
 				path: 'details/:id',
